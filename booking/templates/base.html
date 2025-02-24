@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HotelBooking{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo"><a href="{% url 'hotel-list' %}">HotelBooking</a></div>
+        <nav>
+            <a href="{% url 'hotel-list' %}">Главная</a>
+            <a href="#">Отели</a>
+            <a href="#">О нас</a>
+            <a href="{% url 'contact' %}">Контакты</a>
+        </nav>
+        {% if user.is_authenticated %}
+            <div class="user-info">
+                <span class="welcome-msg">Привет, {{ user.username }}!</span>
+                <a href="{% url 'logout' %}" class="logout-btn">Выйти</a>
+            </div>
+        {% else %}
+            <a href="{% url 'login' %}" class="login-btn">Войти</a>
+        {% endif %}
+    </header>
+
+
+    <!-- Основное содержимое страницы -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2025 HotelBooking. Все права защищены.</p>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+</body>
+</html>

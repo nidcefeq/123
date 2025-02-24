@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Бронирование успешно{% endblock %}
+
+{% block content %}
+<style>
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh; /* Центрирование по вертикали */
+        text-align: center;
+    }
+    .center-content h1 {
+        margin-bottom: 20px;
+    }
+    .center-content a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .center-content a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="center-content">
+    <h1>Ваше бронирование успешно оформлено!</h1>
+    <a href="{% url 'hotel-list' %}">Вернуться на главную</a>
+</div>
+{% endblock %}

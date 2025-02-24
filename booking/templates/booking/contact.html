@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты - HotelBooking{% endblock %}
+
+{% block content %}
+    <section class="contact-container">
+        <h1>Контакты</h1>
+        <p>Свяжитесь с нами по любым вопросам!</p>
+
+        <div class="contact-details">
+            <p><strong>Адрес:</strong> ул. Садовническая, 10, Москва, Россия</p>
+            <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+            <p><strong>Email:</strong> info@hotelbooking.ru</p>
+        </div>
+
+        <!-- Карта без API -->
+        <div class="map-container">
+            <iframe
+                width="600"
+                height="450"
+                style="border:0"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.openstreetmap.org/export/embed.html?bbox=37.6175,55.7500,37.6250,55.7550&layer=mapnik&marker=55.7522,37.6175">
+            </iframe>
+        </div>
+    </section>
+{% endblock %}

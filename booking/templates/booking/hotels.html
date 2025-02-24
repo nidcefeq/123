@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Бронирование отелей{% endblock %}
+
+{% block content %}
+<!-- Фоновый баннер с формой поиска -->
+<section class="hero">
+    <h2>Забронируйте идеальный отель</h2>
+    <form class="search-form" method="GET" action="{% url 'hotel-list' %}">
+        <input type="text" name="city" placeholder="Город" value="{{ request.GET.city }}">
+        <input type="date" name="check_in" value="{{ request.GET.check_in }}">
+        <input type="date" name="check_out" value="{{ request.GET.check_out }}">
+        <input type="number" name="guests" placeholder="Гостей" min="1" value="{{ request.GET.guests }}">
+        <button type="submit">Найти</button>
+    </form>
+</section>
+
+{% if search_mode %}
+<!-- Блок с номерами при поиске -->
+<section class="rooms">
+    <h2>Найденные номера</h2>
+    <div class="room-list">
+        {% for room in rooms %}
+        <div class="room-card">
+            <img src="{{ room.hotel.image.url }}" alt="{{ room.hotel.name }}">
+            <h3>{{ room.hotel.city }}</h3>
+            <h3>{{ room.hotel.name }}</h3>
+            <p>Тип: {{ room.room_type }}</p>
+            <p>Вместимость: {{ room.guests_num }} чел.</p>
+            <p>Цена: {{ room.price_per_night }} ₽/ночь</p>
+            <a href="{% if user.is_authenticated %}{% url 'book-hotel' room.id %}{% else %}{% url 'login' %}{% endif %}">
+                <button>Забронировать</button>
+            </a>
+        </div>
+        {% empty %}
+        <p>Нет доступных номеров.</p>
+        {% endfor %}
+    </div>
+</section>
+{% else %}
+<!-- Блок с популярными отелями на главной -->
+<section class="hotels">
+    <h2>Популярные отели</h2>
+    <div class="hotel-list">
+        {% for hotel in hotels %}
+        <div class="hotel-card">
+            <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}">
+            <h3>{{ hotel.city }}</h3>
+            <h3>{{ hotel.name }}</h3>
+            <p>{{ hotel.rating }} ⭐</p>
+            <p>От {{ hotel.min_price|default:"Нет номеров" }} ₽/ночь</p>
+            <a href="{% if user.is_authenticated %}{% url 'book-hotel' hotel.id %}{% else %}{% url 'login' %}{% endif %}">
+                <button>Забронировать</button>
+            </a>
+        </div>
+        {% empty %}
+        <p>Нет популярных отелей.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Отзывы -->
+<section class="reviews">
+    <h2>Отзывы клиентов</h2>
+    {% for review in reviews %}
+    <div class="review">
+        <p>"{{ review.text }}"</p>
+        <span>- {{ review.author }}</span>
+    </div>
+    {% empty %}
+    <p>Отзывов пока нет.</p>
+    {% endfor %}
+</section>
+{% endblock %}

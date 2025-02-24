@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Бронирование{% endblock %}
+
+{% block content %}
+<h1>Бронирование номера в {{ hotel.name }}</h1>
+
+<div class="room-info">
+    <h3>Номер: {{ room.room_number }} ({{ room.get_room_type_display }})</h3>
+    <p>Вместимость: {{ room.guests_num }} чел.</p>
+    <p>Цена: {{ room.price_per_night }} ₽/ночь</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Забронировать</button>
+</form>
+{% endblock %}

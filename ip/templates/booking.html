@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование отелей</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo">HotelBooking</div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Отели</a>
+            <a href="#">О нас</a>
+            <a href="#">Контакты</a>
+        </nav>
+        <button class="login-btn">Войти</button>
+    </header>
+
+    <!-- Фоновый баннер с формой поиска -->
+    <section class="hero">
+        <h1>Забронируйте идеальный отель</h1>
+        <form class="search-form">
+            <input type="text" placeholder="Город">
+            <input type="date">
+            <input type="date">
+            <input type="number" placeholder="Гостей" min="1">
+            <button type="submit">Найти</button>
+        </form>
+    </section>
+
+    <!-- Популярные отели -->
+    <section class="hotels">
+        <h2>Популярные отели</h2>
+        <div class="hotel-list">
+            <div class="hotel-card">
+                <img src="hotel1.jpg" alt="Отель 1">
+                <h3>Отель Лазурный</h3>
+                <p>⭐⭐⭐⭐ 4.5</p>
+                <p>От 5000₽/ночь</p>
+                <button>Забронировать</button>
+            </div>
+            <div class="hotel-card">
+                <img src="hotel2.jpg" alt="Отель 2">
+                <h3>Гранд Отель</h3>
+                <p>⭐⭐⭐⭐⭐ 5.0</p>
+                <p>От 7000₽/ночь</p>
+                <button>Забронировать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+        <h2>Отзывы клиентов</h2>
+        <div class="review">
+            <p>"Отличный сервис, чистые номера!"</p>
+            <span>- Анна К.</span>
+        </div>
+        <div class="review">
+            <p>"Очень удобное расположение, рекомендую!"</p>
+            <span>- Иван С.</span>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2025 HotelBooking. Все права защищены.</p>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+</body>
+</html>

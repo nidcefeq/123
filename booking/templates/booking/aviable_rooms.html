@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Доступные номера - {{ hotel.name }}{% endblock %}
+
+{% block content %}
+<h2>Доступные номера в {{ hotel.name }}</h2>
+
+<form method="GET">
+    <label>Дата заезда:</label>
+    <input type="date" name="check_in" value="{{ check_in }}">
+    <label>Дата выезда:</label>
+    <input type="date" name="check_out" value="{{ check_out }}">
+    <button type="submit">Проверить</button>
+</form>
+
+<div class="rooms">
+    {% for room in rooms %}
+    <div class="room-card">
+        <h3>Комната {{ room.room_number }}</h3>
+        <p>Тип: {{ room.get_room_type_display }}</p>
+        <p>Цена: {{ room.price_per_night }}₽/ночь</p>
+        <a href="{% url 'book-room' room.id %}"><button>Забронировать</button></a>
+    </div>
+    {% empty %}
+    <p>Нет доступных номеров на выбранные даты.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

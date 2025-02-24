@@ -1,0 +1,246 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0057b8;
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.login-btn {
+    background: white;
+    color: #0057b8;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    /*background: url('/static/hotel-banner.jpg') no-repeat center center/cover;*/
+    color: black;
+}
+
+.search-form input, .search-form button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-form button {
+    background: #0057b8;
+    color: white;
+    cursor: pointer;
+}
+
+.hotels, .reviews {
+    text-align: center;
+    padding: 40px;
+}
+
+.hotel-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hotel-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card img {
+    width: 100%; /* Растягивает по ширине карточки */
+    height: 200px; /* Фиксированная высота */
+    object-fit: cover; /* Обрезает изображение, чтобы заполнить контейнер */
+    border-radius: 10px; /* Закругленные углы для эстетики */
+}
+
+
+.reviews .review {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.book-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;  /* Сдвигаем блок с приветствием и кнопкой "Выйти" к правому краю */
+    margin-left: 20px;  /* Отступ между навигацией и приветствием */
+}
+
+.welcome-msg {
+    margin-right: 10px;  /* Расстояние между текстом приветствия и кнопкой "Выйти" */
+}
+
+.logout-btn {
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 5px;
+}
+
+nav {
+    flex-grow: 1;  /* Чтобы навигационные ссылки занимали весь доступный горизонтальный пространство */
+    text-align: center;  /* Центрирование навигационных ссылок */
+}
+
+.logo a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: white; /* Белый цвет текста */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    transition: none; /* Убирает эффекты */
+}
+
+.logo a:focus, .logo a:active {
+    outline: none; /* Убирает контур */
+    box-shadow: none; /* Убирает тень */
+}
+
+.logo a:hover {
+    color: white; /* Оставляет цвет белым при наведении */
+}
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.room-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.room-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.room-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.room-card a button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.hotel-card a button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+
+.room-card a button:hover {
+    background-color: #0056b3;
+}
+.rooms h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* контакты */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-details {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
